@@ -1,7 +1,6 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
 const exec = require('@actions/exec');
-const fs = require('fs');
+const wait = require('./wait');
 
 async function run() {
   try {
@@ -14,9 +13,7 @@ async function run() {
     "-e","K3S_KUBECONFIG_MODE=666",
     "-v","/tmp/output:/tmp/output","-p","6443:6443",
     "rancher/k3s:"+version,"server"]);
-
-    await exec.exec('./wait-for-file.sh',kubeconfig_location);
-
+    await wait(parseInt(10000));
     core.setOutput("kubeconfig", kubeconfig_location);
     core.exportVariable('envVar', 'Val');
 
