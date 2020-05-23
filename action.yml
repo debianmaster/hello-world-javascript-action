@@ -1,10 +1,10 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'k3s'
+description: 'run kubectl command inside against kubernetes environment'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  version:  
+    description: 'Version of k3s'
     required: true
-    default: 'World'
+    default: 'v1.0.0'
 outputs:
   time: # id of output
     description: 'The time we we greeted you'
