@@ -20,6 +20,7 @@
   "dependencies": {
     "@actions/core": "^1.1.0",
     "@actions/github": "^1.1.0",
-    "execa": "^4.0.2"
+    "execa": "^4.0.2",
+    "wait-on": "^5.0.0"
   }
 }
