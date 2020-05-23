@@ -11,7 +11,6 @@ try {
   "-e","K3S_KUBECONFIG_MODE=666",
   "-v","/tmp/output:/tmp/output","-p","6443:6443",
   "rancher/k3s:"+version,"server"]).stdout.pipe(process.stdout)
-  execa('export', ["test=test"]).stdout.pipe(process.stdout)
   core.setOutput("kubeconfig", kubeconfig_location);
 } catch (error) {
   core.setFailed(error.message);
