@@ -6,8 +6,8 @@ inputs:
     required: true
     default: 'v1.0.0'
 outputs:
-  time: # id of output
-    description: 'The time we we greeted you'
+  kubeconfig: # id of output
+    description: 'Kubeconfig location'
 runs:
   using: 'node12'
   main: 'index.js'
