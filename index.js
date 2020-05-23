@@ -9,7 +9,7 @@ try {
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
   
-  execa('echo', ['unicorns']).stdout.pipe(process.stdout);
+  execa('docker', ['run','-d','nodejs-welcome']).stdout.pipe(process.stdout);
 
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
